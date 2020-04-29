@@ -8,10 +8,17 @@ namespace RoombaCS
     {
         public readonly int Width;
         public readonly int Height;
+
         public Room(int width, int height)
         {
             Width = width;
             Height = height;
+        }
+
+        public bool OnRoom(Point point)
+        {
+            return point.X >= 0 && point.X < Width &&
+                   point.Y >= 0 && point.Y < Height;
         }
     }
 }

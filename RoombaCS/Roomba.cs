@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
 
 namespace RoombaCS
 {
@@ -8,7 +9,17 @@ namespace RoombaCS
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Room room = new Room(5, 5);
+                Console.WriteLine(room.Width + " & " + room.Height);
+
+             
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }
