@@ -11,7 +11,13 @@ namespace RoombaCS.Tests
         [Fact()]
         public void RoomTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            int width = 5;
+            int height = 6;
+
+            var room = new Room(width, height);
+
+            Assert.Equal(width, room.Width);
+            Assert.Equal(height, room.Height);
         }
     }
 }
