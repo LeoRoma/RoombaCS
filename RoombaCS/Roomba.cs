@@ -9,10 +9,6 @@ namespace RoombaCS
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-      
-            string read = File.ReadAllText(@"Input.txt", Encoding.UTF8);
-            Console.WriteLine(read);
-
         }
     }
 }
