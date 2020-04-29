@@ -6,5 +6,10 @@ namespace RoombaCS
 {
     public class Room
     {
+        public Room(int width, int height)
+        {
+            width = width;
+            height = height;
+        }
     }
 }
