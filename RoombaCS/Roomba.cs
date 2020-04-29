@@ -9,6 +9,8 @@ namespace RoombaCS
     {
         static void Main(string[] args)
         {
+            string contents = File.ReadAllText(@"Input.txt", Encoding.UTF8);
+          
             try
             {
                 Room room = new Room(5, 5);
