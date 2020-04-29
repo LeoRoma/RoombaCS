@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RoombaCS
 {
-    class Hoover
+    public class Hoover
     {
     }
 }
