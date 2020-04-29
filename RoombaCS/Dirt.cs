@@ -10,7 +10,7 @@ namespace RoombaCS
         {
             if (!room.OnRoom(this))
             {
-                throw new Exception(this + " is outside the boundaries of the room");
+                throw new OutOfBoundsException(this + " is outside the boundaries of the room");
             }
         }
     }
