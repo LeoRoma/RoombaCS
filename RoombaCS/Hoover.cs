@@ -17,5 +17,10 @@ namespace RoombaCS
         {
             Console.WriteLine(dirt.X + " & " + dirt.Y);
         }
+
+        public void Move()
+        {   
+            X += 1;
+        }
     }
 }

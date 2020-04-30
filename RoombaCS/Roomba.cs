@@ -9,7 +9,7 @@ namespace RoombaCS
     {
         static void Main(string[] args)
         {
-            //string contents = File.ReadAllText(@"Input.txt", Encoding.UTF8);
+            //string contents = File.ReadAllText(@"Input.txt", Encoding.UTF16);
           
             try
             {
@@ -17,7 +17,9 @@ namespace RoombaCS
                 Dirt dirt = new Dirt(1, 4, room);
                 Hoover hoover = new Hoover(2, 3, room);
                 hoover.CheckDirt(dirt);
-                Console.WriteLine(room.Width + " & " + room.Height);
+                Console.WriteLine(room.Width + " & " + room.Height + " I am Room size");
+                hoover.Move();
+                Console.WriteLine(hoover.X + " & " + hoover.Y + " I am Hoover position");
             }
             catch(Exception ex)
             {
