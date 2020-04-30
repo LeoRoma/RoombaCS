@@ -15,7 +15,7 @@ namespace RoombaCS
             Height = height;
         }
 
-        public bool OnRoom(Point point)
+        public bool OnRoom(Position point)
         {
             return point.X >= 0 && point.X < Width &&
                    point.Y >= 0 && point.Y < Height;

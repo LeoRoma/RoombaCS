@@ -4,12 +4,12 @@ using System.Text;
 
 namespace RoombaCS
 {
-    public class Point
+    public class Position
     {
         public readonly int X;
         public readonly int Y;
 
-        public Point(int x, int y)
+        public Position(int x, int y)
         {
             X = x;
             Y = y;

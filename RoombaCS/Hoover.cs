@@ -6,11 +6,13 @@ namespace RoombaCS
 {
     public class Hoover
     {
-        public readonly string Step;
+        public readonly int X;
+        public readonly int Y;
 
-        public Hoover(string step) 
+        public Hoover(int x, int y) 
         {
-            Step = step;
+            X = x;
+            Y = y;
         }
         public void CheckDirt(Dirt dirt)
         {

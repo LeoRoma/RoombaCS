@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RoombaCS
 {
-    public class Dirt : Point
+    public class Dirt : Position
     {
         public Dirt(int x, int y, Room room) : base(x, y)
         {

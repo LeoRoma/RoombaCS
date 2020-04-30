@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RoombaCS.Tests
 {
-    public class PointTests
+    public class PositionTests
     {
         [Fact()]
         public void PointTest()
@@ -14,7 +14,7 @@ namespace RoombaCS.Tests
             int x = 5;
             int y = 6;
 
-            var point = new Point(x, y);
+            var point = new Position(x, y);
 
             Assert.Equal(x, point.X);
             Assert.Equal(y, point.Y);

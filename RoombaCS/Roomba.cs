@@ -9,7 +9,7 @@ namespace RoombaCS
     {
         static void Main(string[] args)
         {
-            string contents = File.ReadAllText(@"Input.txt", Encoding.UTF8);
+            //string contents = File.ReadAllText(@"Input.txt", Encoding.UTF8);
           
             try
             {
