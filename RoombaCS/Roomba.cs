@@ -15,7 +15,7 @@ namespace RoombaCS
             {
                 Room room = new Room(5, 5);
                 Dirt dirt = new Dirt(1, 4, room);
-                Hoover hoover = new Hoover("hello");
+                Hoover hoover = new Hoover(2, 3, room);
                 hoover.CheckDirt(dirt);
                 Console.WriteLine(room.Width + " & " + room.Height);
             }

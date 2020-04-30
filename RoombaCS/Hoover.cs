@@ -4,15 +4,14 @@ using System.Text;
 
 namespace RoombaCS
 {
-    public class Hoover
+    public class Hoover : Position
     {
-        public readonly int X;
-        public readonly int Y;
-
-        public Hoover(int x, int y) 
+        public Hoover(int x, int y, Room room) : base(x, y)
         {
-            X = x;
-            Y = y;
+            if (!room.OnRoom(this))
+            {
+                throw new OutOfBoundsException(this + " is outside the boundaries of the room");
+            }
         }
         public void CheckDirt(Dirt dirt)
         {

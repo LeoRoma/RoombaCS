@@ -21,7 +21,7 @@ namespace RoombaCS.Tests
         }
 
         [Fact]
-        public void CheckPointIsOnRoom()
+        public void CheckPositionIsOnRoom()
         {
             var room = new Room(5, 5);
             var point = new Position(2, 3);
@@ -32,7 +32,7 @@ namespace RoombaCS.Tests
         }
 
         [Fact]
-        public void CheckPointIsNotOnRoom()
+        public void CheckPositionIsNotOnRoom()
         {
             var room = new Room(5, 5);
             var point = new Position(6, 6);

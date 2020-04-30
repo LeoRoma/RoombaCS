@@ -9,7 +9,7 @@ namespace RoombaCS.Tests
     public class PositionTests
     {
         [Fact()]
-        public void PointTest()
+        public void PositionTest()
         {
             int x = 5;
             int y = 6;
