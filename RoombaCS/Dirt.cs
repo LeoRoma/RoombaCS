@@ -4,14 +4,13 @@ using System.Text;
 
 namespace RoombaCS
 {
-    public class Dirt : Position
+    public class Dirt
     {
-        public Dirt(int x, int y, Room room) : base(x, y)
+        public readonly RoomLocation[] Location;
+
+        public Dirt(RoomLocation[] location)
         {
-            if (!room.OnRoom(this))
-            {
-                throw new OutOfBoundsException(this + " is outside the boundaries of the room");
-            }
+            Location = location;
         }
     }
 }

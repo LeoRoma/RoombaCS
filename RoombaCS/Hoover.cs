@@ -4,18 +4,18 @@ using System.Text;
 
 namespace RoombaCS
 {
-    public class Hoover : Position
+    public class Hoover 
     {
-        public Hoover(int x, int y, Room room) : base(x, y)
+        private readonly RoomLocation _location;
+        
+        public Hoover(RoomLocation location)
         {
-            if (!room.OnRoom(this))
-            {
-                throw new OutOfBoundsException(this + " is outside the boundaries of the room");
-            }
+            _location = location;
         }
+
         public void CheckDirt(Dirt dirt)
         {
-            Console.WriteLine(dirt.X + " & " + dirt.Y);
+            Console.WriteLine("I am dirt " + dirt.Location[0].X);
         }
 
         public void Move(Instruction instruction)
@@ -27,6 +27,7 @@ namespace RoombaCS
             {
                 if (step.Equals('N'))
                 {
+                    _location.Y += 1;
                    Console.WriteLine("urray N");
                 }
 
@@ -46,7 +47,7 @@ namespace RoombaCS
                 }
             }
 
-            Console.WriteLine(steps);
+            Console.WriteLine(_location.X + " & " + _location.Y);
             Console.WriteLine(instruction.Coordinates);
         }
     }
