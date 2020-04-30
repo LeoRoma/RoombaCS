@@ -6,11 +6,11 @@ namespace RoombaCS
 {
     public class Hoover 
     {
-        private readonly RoomLocation _location;
+        public RoomLocation Location;
         
         public Hoover(RoomLocation location)
         {
-            _location = location;
+            Location = location;
         }
 
         public void CheckDirt(Dirt dirt)
@@ -27,7 +27,7 @@ namespace RoombaCS
             {
                 if (step.Equals('N'))
                 {
-                    _location.Y += 1;
+                    Location.Y += 1;
                    Console.WriteLine("urray N");
                 }
 
@@ -47,7 +47,7 @@ namespace RoombaCS
                 }
             }
 
-            Console.WriteLine(_location.X + " & " + _location.Y);
+            Console.WriteLine(Location.X + " & " + Location.Y);
             Console.WriteLine(instruction.Coordinates);
         }
     }

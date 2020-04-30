@@ -30,7 +30,7 @@ namespace RoombaCS
                 hoover.CheckDirt(dirt);
                 Console.WriteLine(room.Width + " & " + room.Height + " I am Room size");
                 hoover.Move(instruction);
-                //Console.WriteLine(hoover.MapLocation.X + " & " + hoover.Y + " I am Hoover position");
+                Console.WriteLine(hoover.Location.X + " & " + hoover.Location.Y + " I am Hoover position");
             }
             catch(Exception ex)
             {
