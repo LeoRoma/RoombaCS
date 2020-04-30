@@ -11,8 +11,7 @@ namespace RoombaCS.Tests
         [Fact()]
         public void DirtTest()
         {
-            var room = new Room(5, 5);
-            var exception = Assert.Throws<OutOfBoundsException>(() => new Dirt(6, 6, room));
+            
         }
     }
 }

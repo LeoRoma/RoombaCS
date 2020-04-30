@@ -18,9 +18,36 @@ namespace RoombaCS
             Console.WriteLine(dirt.X + " & " + dirt.Y);
         }
 
-        public void Move()
-        {   
-            X += 1;
+        public void Move(Instruction instruction)
+        {
+            char[] steps;
+            steps = instruction.Coordinates.ToCharArray();
+            
+            foreach(char step in steps)
+            {
+                if (step.Equals('N'))
+                {
+                   Console.WriteLine("urray N");
+                }
+
+                if (step.Equals('S'))
+                {
+                    Console.WriteLine("urray S");
+                }
+
+                if (step.Equals('E'))
+                {
+                    Console.WriteLine("urray E");
+                }
+
+                if (step.Equals('W'))
+                {
+                    Console.WriteLine("urray W");
+                }
+            }
+
+            Console.WriteLine(steps);
+            Console.WriteLine(instruction.Coordinates);
         }
     }
 }
