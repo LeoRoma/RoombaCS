@@ -27,27 +27,25 @@ namespace RoombaCS
             {
                 if (step.Equals('N'))
                 {
-                    Location.Y += 1;
-                   Console.WriteLine("urray N");
+                   Location.Y += 1;
                 }
 
                 if (step.Equals('S'))
                 {
-                    Console.WriteLine("urray S");
+                    Location.Y -= 1;
                 }
 
                 if (step.Equals('E'))
                 {
-                    Console.WriteLine("urray E");
+                    Location.X += 1;
                 }
 
                 if (step.Equals('W'))
                 {
-                    Console.WriteLine("urray W");
+                    Location.X -= 1;
                 }
             }
             Console.WriteLine(Location.X + " & " + Location.Y);
-            Console.WriteLine(instruction.Coordinates);
             return Location.X;
             
         }

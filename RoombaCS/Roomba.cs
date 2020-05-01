@@ -31,6 +31,7 @@ namespace RoombaCS
                 Console.WriteLine(room.Width + " & " + room.Height + " I am Room size");
                 hoover.Move(instruction);
                 Console.WriteLine(hoover.Location.X + " & " + hoover.Location.Y + " I am Hoover position");
+                Console.WriteLine(hoover.Location.Y + " I am Y position");
             }
             catch(Exception ex)
             {
