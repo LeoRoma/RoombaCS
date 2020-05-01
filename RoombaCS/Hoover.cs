@@ -18,7 +18,7 @@ namespace RoombaCS
             Console.WriteLine("I am dirt " + dirt.Location[0].X);
         }
 
-        public int Move(Instruction instruction)
+        public string Move(Instruction instruction)
         {
             char[] steps;
             steps = instruction.Coordinates.ToCharArray();
@@ -45,9 +45,10 @@ namespace RoombaCS
                     Location.X -= 1;
                 }
             }
-            Console.WriteLine(Location.X + " & " + Location.Y);
-            return Location.X;
+            Console.WriteLine($"Final hoover location is X: {Location.X} and Y: {Location.Y}");
+            return $"Final hoover location is X: {Location.X} and Y: {Location.Y}";
             
+
         }
     }
 }

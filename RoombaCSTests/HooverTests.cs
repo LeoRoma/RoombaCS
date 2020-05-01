@@ -28,8 +28,8 @@ namespace RoombaCS.Tests
             _hooverLocation = new RoomLocation(1, 2, _room5x5);
             _hoover = new Hoover(_hooverLocation);
             Console.WriteLine(_hooverLocation.Y);
-            _hooverLocation.X = 3;
-            var expected = _hooverLocation.X;
+            _hooverLocation.Y = 3;
+            var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {_hooverLocation.Y}";
 
             var actual = _hoover.Move(instruction);
 
@@ -45,7 +45,7 @@ namespace RoombaCS.Tests
             _hoover = new Hoover(_hooverLocation);
 
             _hooverLocation.Y = 1;
-            var expected = _hooverLocation.Y;
+            var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {_hooverLocation.Y}";
 
             var actual = _hoover.Move(instruction);
 
@@ -61,7 +61,7 @@ namespace RoombaCS.Tests
             _hoover = new Hoover(_hooverLocation);
 
             _hooverLocation.Y = 2;
-            var expected = _hooverLocation.Y;
+            var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {_hooverLocation.Y}";
 
             var actual = _hoover.Move(instruction);
 
@@ -77,7 +77,7 @@ namespace RoombaCS.Tests
             _hoover = new Hoover(_hooverLocation);
 
             _hooverLocation.Y = 0;
-            var expected = _hooverLocation.Y;
+            var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {_hooverLocation.Y}";
 
             var actual = _hoover.Move(instruction);
 
