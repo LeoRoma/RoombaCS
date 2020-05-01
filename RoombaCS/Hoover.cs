@@ -27,7 +27,7 @@ namespace RoombaCS
             {
                 if (step.Equals('N'))
                 {
-                   Location.Y += 1;
+                    Location.Y += 1;
                 }
 
                 if (step.Equals('S'))
@@ -48,7 +48,14 @@ namespace RoombaCS
             Console.WriteLine($"Final hoover location is X: {Location.X} and Y: {Location.Y}");
             return $"Final hoover location is X: {Location.X} and Y: {Location.Y}";
             
+        }
 
+        public void Clean(Dirt dirts)
+        {
+            foreach (var dirt in dirts.Location)
+            {
+                Console.WriteLine(dirt.X + " & " + dirt.Y);
+            }
         }
     }
 }
