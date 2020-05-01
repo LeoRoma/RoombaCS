@@ -18,7 +18,7 @@ namespace RoombaCS
             Console.WriteLine("I am dirt " + dirt.Location[0].X);
         }
 
-        public void Move(Instruction instruction)
+        public int Move(Instruction instruction)
         {
             char[] steps;
             steps = instruction.Coordinates.ToCharArray();
@@ -46,9 +46,10 @@ namespace RoombaCS
                     Console.WriteLine("urray W");
                 }
             }
-
             Console.WriteLine(Location.X + " & " + Location.Y);
             Console.WriteLine(instruction.Coordinates);
+            return Location.X;
+            
         }
     }
 }
