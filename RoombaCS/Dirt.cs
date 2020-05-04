@@ -6,9 +6,9 @@ namespace RoombaCS
 {
     public class Dirt
     {
-        public readonly RoomLocation[] Location;
+        public List<RoomLocation> Location;
 
-        public Dirt(RoomLocation[] location)
+        public Dirt(List<RoomLocation> location)
         {
             Location = location;
         }

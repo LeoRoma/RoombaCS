@@ -7,18 +7,15 @@ namespace RoombaCS
     public class Hoover 
     {
         public RoomLocation Location;
+        private int dirtCollected;
         
         public Hoover(RoomLocation location)
         {
             Location = location;
+            dirtCollected = 0;
         }
 
-        public void CheckDirt(Dirt dirt)
-        {
-            Console.WriteLine("I am dirt " + dirt.Location[0].X);
-        }
-
-        public string Move(Instruction instruction)
+        public string Move(Instruction instruction, Dirt dirts)
         {
             char[] steps;
             steps = instruction.Coordinates.ToCharArray();
@@ -44,18 +41,29 @@ namespace RoombaCS
                 {
                     Location.X -= 1;
                 }
+
+                Clean(dirts);
             }
             Console.WriteLine($"Final hoover location is X: {Location.X} and Y: {Location.Y}");
             return $"Final hoover location is X: {Location.X} and Y: {Location.Y}";
             
         }
 
-        public void Clean(Dirt dirts)
+        public int Clean(Dirt dirts)
         {
             foreach (var dirt in dirts.Location)
             {
-                Console.WriteLine(dirt.X + " & " + dirt.Y);
-            }
+                Console.WriteLine($"hoover location is X: {Location.X} and Y: {Location.Y}");
+                Console.WriteLine($"dirt location is X: {dirt.X} and Y: {dirt.Y}");
+                Console.WriteLine("--------------");
+                if (Location.X.Equals(dirt.X) && Location.Y.Equals(dirt.Y))
+                {
+
+                    dirtCollected += 1;
+                }
+             }
+            Console.WriteLine($"Hoover totals dirt collected is: {dirtCollected}");
+            return dirtCollected;
         }
     }
 }

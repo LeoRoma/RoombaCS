@@ -11,6 +11,7 @@ namespace RoombaCS.Tests
         private Room _room5x5;
         private RoomLocation _hooverLocation;
         private Hoover _hoover;
+        private Dirt _dirts;
 
         [Fact()]
         public void CheckPositionOnRoom()
@@ -23,15 +24,20 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionIncrementedWithN()
         {
-            _room5x5 = new Room(5, 5);
             var instruction =  new Instruction("N");
-            _hooverLocation = new RoomLocation(1, 2, _room5x5);
-            Console.WriteLine(_hooverLocation.Y);
-            _hoover = new Hoover(_hooverLocation);
             
             var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {3}";
 
-            var actual = _hoover.Move(instruction);
+            _dirts = new Dirt(
+                new[]
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+            );
+
+            var actual = _hoover.Move(instruction, _dirts);
 
             Assert.Equal(expected, actual);
         }
@@ -39,14 +45,20 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionDecrementedWithS()
         {
-            _room5x5 = new Room(5, 5);
             var instruction = new Instruction("S");
-            _hooverLocation = new RoomLocation(1, 2, _room5x5);
-            _hoover = new Hoover(_hooverLocation);
-
+           
             var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {1}";
 
-            var actual = _hoover.Move(instruction);
+            _dirts = new Dirt(
+                new[]
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+            );
+
+            var actual = _hoover.Move(instruction, _dirts);
 
             Assert.Equal(expected, actual);
         }
@@ -54,14 +66,21 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionIncrementedWithE()
         {
-            _room5x5 = new Room(5, 5);
+            
             var instruction = new Instruction("E");
-            _hooverLocation = new RoomLocation(1, 2, _room5x5);
-            _hoover = new Hoover(_hooverLocation);
-
+          
             var expected = $"Final hoover location is X: {2} and Y: {_hooverLocation.Y}";
 
-            var actual = _hoover.Move(instruction);
+            _dirts = new Dirt(
+                new[]
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+             );
+
+            var actual = _hoover.Move(instruction, _dirts);
 
             Assert.Equal(expected, actual);
         }
@@ -69,14 +88,42 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionDecrementedWithW()
         {
-            _room5x5 = new Room(5, 5);
-            var instruction = new Instruction("W");
-            _hooverLocation = new RoomLocation(1, 2, _room5x5);
-            _hoover = new Hoover(_hooverLocation);
+           
+            var instruction = new Instruction("W"); 
 
             var expected = $"Final hoover location is X: {0} and Y: {_hooverLocation.Y}";
 
-            var actual = _hoover.Move(instruction);
+            _dirts = new Dirt(
+                new[]
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+             );
+
+            var actual = _hoover.Move(instruction, _dirts);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetNumberOfDirtCleaned()
+        {
+            var instruction = new Instruction("NNESEESWNWW");
+
+            var expected = 2;
+
+            _dirts = new Dirt(
+                new[]
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+             );
+
+            var actual = _hoover.Move(instruction, _dirts);
 
             Assert.Equal(expected, actual);
         }
