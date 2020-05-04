@@ -18,7 +18,7 @@ namespace RoombaCS
                 Hoover hoover = new Hoover(new RoomLocation(1, 2, room));
 
                 Dirt dirts = new Dirt(
-                    new[]
+                    new List<RoomLocation>
                     {
                         new RoomLocation(1, 0, room),
                         new RoomLocation(2, 2, room),
