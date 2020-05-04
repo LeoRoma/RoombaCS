@@ -26,11 +26,11 @@ namespace RoombaCS
                     }
                 );
 
-                Instruction instruction = new Instruction("NNESEESWNWW");
+                //Instruction instruction = new Instruction("NNESEESWNWW");
                 hoover.CheckDirt(dirt);
                 hoover.Clean(dirt);
                 Console.WriteLine(room.Width + " & " + room.Height + " I am Room size");
-                hoover.Move(instruction);
+                //hoover.Move(instruction);
                 Console.WriteLine(hoover.Location.X + " & " + hoover.Location.Y + " I am Hoover position");
                 Console.WriteLine(hoover.Location.Y + " I am Y position");
             }

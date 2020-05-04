@@ -26,9 +26,10 @@ namespace RoombaCS.Tests
             var room = new Room(5, 5);
             var point = new Position(2, 3);
 
+            var actual = room.OnRoom(point);
             var expected = true;
 
-            Assert.Equal(expected, room.OnRoom(point));
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
