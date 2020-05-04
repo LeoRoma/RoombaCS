@@ -29,8 +29,6 @@ namespace RoombaCS
                 Instruction instruction = new Instruction("NNESEESWNWW");
                
                 hoover.Move(instruction, dirts);
-                Console.WriteLine(hoover.Location.X + " & " + hoover.Location.Y + " I am Hoover position");
-                Console.WriteLine(hoover.Location.Y + " I am Y position");
             }
             catch(Exception ex)
             {
