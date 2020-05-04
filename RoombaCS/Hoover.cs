@@ -15,7 +15,7 @@ namespace RoombaCS
             dirtCollected = 0;
         }
 
-        public string Move(Instruction instruction, Dirt dirts)
+        public string Move(Instruction instruction, Dirt dirts, Room room)
         {
             char[] steps;
             steps = instruction.Coordinates.ToCharArray();
@@ -42,6 +42,10 @@ namespace RoombaCS
                     Location.X -= 1;
                 }
 
+                if (Location.X < 0 || Location.Y > room.Width || Location.Y < 0 || Location.Y > room.Height)
+                {
+                    throw new HitWallException("Sorry hoover can't go further");
+                }
                 Clean(dirts);
             }
             Console.WriteLine($"Final hoover location is X: {Location.X} and Y: {Location.Y}");
@@ -58,7 +62,7 @@ namespace RoombaCS
                     dirts.Location.Remove(dirt);
                     dirtCollected += 1;
                 }
-             }
+            }
             Console.WriteLine($"Hoover totals dirt collected is: {dirtCollected}");
             return dirtCollected;
         }

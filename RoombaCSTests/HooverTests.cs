@@ -24,7 +24,7 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionIncrementedWithN()
         {
-            var instruction =  new Instruction("N");
+            var instruction = new Instruction("N");
 
             _room5x5 = new Room(5, 5);
             _hooverLocation = new RoomLocation(1, 2, _room5x5);
@@ -41,7 +41,7 @@ namespace RoombaCS.Tests
 
             var expected = $"Final hoover location is X: {_hooverLocation.X} and Y: {3}";
 
-            var actual = _hoover.Move(instruction, _dirts);
+            var actual = _hoover.Move(instruction, _dirts, _room5x5);
 
             Assert.Equal(expected, actual);
         }
@@ -66,7 +66,7 @@ namespace RoombaCS.Tests
                 }
             );
 
-            var actual = _hoover.Move(instruction, _dirts);
+            var actual = _hoover.Move(instruction, _dirts, _room5x5);
 
             Assert.Equal(expected, actual);
         }
@@ -74,7 +74,7 @@ namespace RoombaCS.Tests
         [Fact]
         public void PositionIncrementedWithE()
         {
-            
+
             var instruction = new Instruction("E");
 
             _room5x5 = new Room(5, 5);
@@ -92,7 +92,7 @@ namespace RoombaCS.Tests
                 }
             );
 
-            var actual = _hoover.Move(instruction, _dirts);
+            var actual = _hoover.Move(instruction, _dirts, _room5x5);
 
             Assert.Equal(expected, actual);
         }
@@ -118,7 +118,7 @@ namespace RoombaCS.Tests
                 }
             );
 
-            var actual = _hoover.Move(instruction, _dirts);
+            var actual = _hoover.Move(instruction, _dirts, _room5x5);
 
             Assert.Equal(expected, actual);
         }
@@ -144,10 +144,34 @@ namespace RoombaCS.Tests
                 }
             );
 
-            _hoover.Move(instruction, _dirts);
+            _hoover.Move(instruction, _dirts, _room5x5);
             var actual = _hoover.Clean(_dirts);
 
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ThrowHitWallExceptionTest()
+        {
+
+            var instruction = new Instruction("NNESEESWNWWWWWWW");
+
+            _room5x5 = new Room(5, 5);
+            _hooverLocation = new RoomLocation(1, 2, _room5x5);
+            _hoover = new Hoover(_hooverLocation);
+
+            _dirts = new Dirt(
+                new List<RoomLocation>
+                {
+                        new RoomLocation(1, 0, _room5x5),
+                        new RoomLocation(2, 2, _room5x5),
+                        new RoomLocation(2, 3, _room5x5),
+                }
+            );
+
+            var actual = _hoover.Move(instruction, _dirts, _room5x5);
+
+            var exception = Assert.Throws<HitWallException>(() => _hoover);
         }
     }
 }

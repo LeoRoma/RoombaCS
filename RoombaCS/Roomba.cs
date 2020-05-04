@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace RoombaCS
 {
-    public class Roomba 
+    public class Roomba
     {
         static void Main(string[] args)
         {
             //string contents = File.ReadAllText(@"Input.txt", Encoding.UTF16);
-          
+
             try
             {
                 Room room = new Room(5, 5);
@@ -27,10 +27,15 @@ namespace RoombaCS
                 );
 
                 Instruction instruction = new Instruction("NNESEESWNWW");
-               
-                hoover.Move(instruction, dirts);
+
+                hoover.Move(instruction, dirts, room);
             }
-            catch(Exception ex)
+            catch (OutOfBoundsException ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            catch (HitWallException ex)
             {
                 Console.WriteLine(ex);
             }

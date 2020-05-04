@@ -21,7 +21,16 @@ namespace RoombaCS
         public OutOfBoundsException(string message) : base(message)
         { }
     }
-        
+
+    public class HitWallException : RoombaExceptions
+    {
+        public HitWallException()
+        { }
+
+        public HitWallException(string message) : base(message)
+        { }
+    }
+
 }
 
 
